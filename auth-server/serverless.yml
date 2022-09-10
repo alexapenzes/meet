@@ -3,6 +3,7 @@ service: auth-server
 provider:
   name: aws
   runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
   region: eu-central-1
   timeout: 60
   environment:
@@ -22,4 +23,10 @@ functions:
     events:
       - http:
           path: api/token/{code}
+          method: get
+  getCalendarEvents:
+    handler: handler.getCalendarEvents
+    events:
+      - http:
+          path: api/get-events/{access_token}
           method: get
