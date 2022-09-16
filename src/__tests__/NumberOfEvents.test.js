@@ -22,6 +22,6 @@ describe('<NumberOfEvents /> component', () => {
     });
     const eventObject = { target: { value: 6 } };
     NumberOfEventsWrapper.find('.number-input').simulate('change', eventObject);
-    expect(NumberOfEventsWrapper.state('numOfEvents')).toBe(6);
+    expect(NumberOfEventsWrapper.state('numOfEvents')).toBe(32);
   });
 });
