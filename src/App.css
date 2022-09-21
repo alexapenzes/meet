@@ -1,3 +1,10 @@
+/*burgundy: #780116
+yellow-red:#F7B538
+ochre:#DB7C26
+flame:#D8572A
+orangegoldengatebridge:#C32F27
+*/
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
   text-align: center;
@@ -63,7 +70,7 @@ input[type="number"] {
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #eee;
+  background-color: #D8572A;
   cursor: default;
 }
 
@@ -73,7 +80,7 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #F7B538;
 }
 
 .event {
@@ -83,6 +90,8 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  background-color: #780116;
+  color: #ccc;
 }
 
 .details-btn {
