@@ -27,19 +27,19 @@ class Event extends Component {
               >
                 See details on Google Calendar
               </a>
-              <p className="event-description">{event.description}</p>
+              <p className="description">{event.description}</p>
             </>
           )}
           {!this.state.show ? (
             <button
-              className="event-showDetails-btn"
+              className="details-btn"
               onClick={this.toggleEventDetails}
             >
               Show Details
             </button>
           ) : (
             <button
-              className="event-hideDetails-btn"
+              className="details-btn"
               onClick={this.toggleEventDetails}
             >
               Hide Details

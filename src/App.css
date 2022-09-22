@@ -1,10 +1,3 @@
-/*burgundy: #780116
-yellow-red:#F7B538
-ochre:#DB7C26
-flame:#D8572A
-orangegoldengatebridge:#C32F27
-*/
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .App {
   text-align: center;
@@ -13,6 +6,17 @@ orangegoldengatebridge:#C32F27
 
 .App * {
   box-sizing: border-box;
+}
+
+body {
+  background-image: url('pastelgreen.png');
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.search {
+  padding: 10px;
+  margin: 10px;
 }
 
 ul {
@@ -24,11 +28,9 @@ p {
   margin: 5px 0;
 }
 
-.display-none {
-  display: none;
-}
-.showSuggestions {
-  display: block;
+.event-summary-title,
+.event-about-title {
+  font-variant: small-caps;
 }
 
 input[type="text"],
@@ -70,7 +72,8 @@ input[type="number"] {
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #D8572A;
+  background-color: #157A6E;
+  color: white;
   cursor: default;
 }
 
@@ -80,61 +83,54 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #F7B538;
+  background-color: #c0eec0;
+  color: black;
 }
 
 .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 2px solid #c0eec0;
   border-radius: 4px;
   position: relative;
-  background-color: #780116;
-  color: #ccc;
+  background-color: rgb(255, 255, 255);
+  color: #157A6E;
+}
+
+.event-htmlLink {
+  color: #157A6E;
+}
+
+.event-htmlLink:hover, 
+.event-htmlLink:active {
+  color: #9cd99c;
 }
 
 .details-btn {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  padding: 5px 8px;
+  padding: 3px 5px;
   border-radius: 4px;
-  outline: none;
+  border: solid 3px #157A6E;
   cursor: pointer;
-}
-
-.name {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.group-name {
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-.going,
-.visibility {
-  font-style: italic;
+  margin-top: 10px;
+  background-color: #157A6E;
+  color: #fff;
 }
 
 .description {
   overflow-x: hidden;
+  text-align: justify;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .numberOfEvents {
-  width: 200px;
-  margin: 20px auto;
-  text-align: center;
+  margin-left: 10px;
 }
 
-.button-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-  padding: 20px;
-  font-family: sans-serif;
+.number-input {
+  width: 200px;
+  text-align: left;
 }
 
 .Alert {

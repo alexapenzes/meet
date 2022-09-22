@@ -61,14 +61,14 @@ class App extends Component {
     return (
       <div className="App">
         <Container fluid>
-          <Row>
-            <Col>
+          <Row className="search">
+            <Col style={{display:"inline-block"}}>
               <CitySearch
                 locations={this.state.locations}
                 updateEvents={this.updateEvents}
               />
             </Col>
-            <Col>
+            <Col style={{display:"inline-block"}}>
               <NumberOfEvents
                 numberOfEvents={this.state.numberOfEvents}
                 setNumberOfEvents={this.setNumberOfEvents}
