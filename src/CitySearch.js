@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { InfoAlert } from "./Alert";
 
 class CitySearch extends Component {
   state = {
     query: "",
     suggestions: [],
-    showSuggestions: undefined
+    showSuggestions: undefined,
   };
 
   handleInputChanged = (event) => {
@@ -13,16 +14,26 @@ class CitySearch extends Component {
     const suggestions = this.props.locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
-    this.setState({
-      query: value,
-      suggestions,
-    });
+    if (suggestions.length === 0) {
+      this.setState({
+        query: value,
+        infoText: "Please try another city.",
+      });
+    } else {
+      return this.setState({
+        query: value,
+        suggestions,
+        infoText: "",
+      });
+    }
   };
 
   handleItemClicked = (suggestion) => {
     this.setState({
       query: suggestion,
-      showSuggestions: false
+      suggestions: [],
+      showSuggestions: false,
+      infoText: "",
     });
 
     this.props.updateEvents(suggestion);
@@ -31,15 +42,21 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
+        <InfoAlert className="InfoAlert" text={this.state.infoText} />
         <input
           type="text"
           className="city"
           placeholder="Search a city"
           value={this.state.query}
           onChange={this.handleInputChanged}
-          onFocus={() => { this.setState({ showSuggestions: true }) }}
+          onFocus={() => {
+            this.setState({ showSuggestions: true });
+          }}
         />
-        <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
+        <ul
+          className="suggestions"
+          style={this.state.showSuggestions ? {} : { display: "none" }}
+        >
           {this.state.suggestions.map((suggestion) => (
             <li
               key={suggestion}

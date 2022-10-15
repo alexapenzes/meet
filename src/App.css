@@ -9,7 +9,7 @@
 }
 
 body {
-  background-image: url('pastelgreen.png');
+  background-image: url("pastelgreen.png");
   background-repeat: repeat;
   background-attachment: fixed;
 }
@@ -17,6 +17,7 @@ body {
 .search {
   padding: 10px;
   margin: 10px;
+  margin-top: 30px;
 }
 
 ul {
@@ -72,7 +73,7 @@ input[type="number"] {
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #157A6E;
+  background-color: #157a6e;
   color: white;
   cursor: default;
 }
@@ -95,14 +96,14 @@ input[type="number"] {
   border-radius: 4px;
   position: relative;
   background-color: rgb(255, 255, 255);
-  color: #157A6E;
+  color: #157a6e;
 }
 
 .event-htmlLink {
-  color: #157A6E;
+  color: #157a6e;
 }
 
-.event-htmlLink:hover, 
+.event-htmlLink:hover,
 .event-htmlLink:active {
   color: #9cd99c;
 }
@@ -110,10 +111,10 @@ input[type="number"] {
 .details-btn {
   padding: 3px 5px;
   border-radius: 4px;
-  border: solid 3px #157A6E;
+  border: solid 3px #157a6e;
   cursor: pointer;
   margin-top: 10px;
-  background-color: #157A6E;
+  background-color: #157a6e;
   color: #fff;
 }
 
@@ -135,7 +136,8 @@ input[type="number"] {
 
 .Alert {
   position: fixed;
-  top: 20px;
+  top: 10px;
+  margin: inherit;
 }
 
 .data-vis-wrapper {
@@ -202,8 +204,6 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
-
-
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
