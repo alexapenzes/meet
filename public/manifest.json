@@ -3,19 +3,19 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "meetfav.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon",
       "purpose": "any maskable"
     },
     {
-      "src": "meet-app-192.png",
+      "src": "meet-192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "meet-app-512.png",
+      "src": "meet-512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
