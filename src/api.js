@@ -22,7 +22,6 @@ export const getAccessToken = async () => {
   const tokenCheck = accessToken && (await checkToken(accessToken));
 
   if (!accessToken || tokenCheck.error) {
-    console.log("token not found");
     await localStorage.removeItem("access_token");
     const searchParams = new URLSearchParams(window.location.search);
     const code = await searchParams.get("code");
@@ -61,7 +60,6 @@ const checkToken = async (accessToken) => {
   )
     .then((res) => res.json())
     .catch((error) => error.json());
-    console.log("result", result);
   return result;
 };
 
@@ -80,7 +78,6 @@ const removeQuery = () => {
 };
 
 export const getEvents = async () => {
-  console.log("getEvents");
   NProgress.start();
 
   if (window.location.href.startsWith("http://localhost")) {
@@ -88,8 +85,13 @@ export const getEvents = async () => {
     return mockData;
   }
 
+  if (!navigator.onLine) {
+    const data = localStorage.getItem("lastEvents");
+    NProgress.done();
+    return data ? JSON.parse(data).events : [];
+}
+
   const token = await getAccessToken();
-  console.log("Token", token);
 
   if (token) {
     removeQuery();
