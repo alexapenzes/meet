@@ -41,8 +41,9 @@ class CitySearch extends Component {
 
   render() {
     return (
+      <>
+      <InfoAlert className="InfoAlert" text={this.state.infoText} />
       <div className="CitySearch">
-        <InfoAlert className="InfoAlert" text={this.state.infoText} />
         <input
           type="text"
           className="city"
@@ -70,6 +71,7 @@ class CitySearch extends Component {
           </li>
         </ul>
       </div>
+      </>
     );
   }
 }

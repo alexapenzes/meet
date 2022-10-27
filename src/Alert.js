@@ -10,7 +10,7 @@ class Alert extends Component {
     return {
       color: this.color,
       padding: "10px",
-      fontWeight: "bold",
+      fontStyle: "italic"
     };
   };
 
@@ -33,7 +33,7 @@ class InfoAlert extends Alert {
 class ErrorAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = "red";
+    this.color = "#6fa06f";
   }
 }
 

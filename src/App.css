@@ -10,18 +10,12 @@ tea green: #c0eec0; */
   padding: 2% 5%;
 }
 
-.App * {
+* {
   box-sizing: border-box;
 }
 
 body {
   background-color: #157a6e;
-}
-
-.search {
-  padding: 10px;
-  margin: 10px;
-  margin-top: 30px;
 }
 
 ul {
@@ -30,7 +24,35 @@ ul {
 }
 
 p {
-  margin: 5px 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.title-text {
+  font-family: 'Roboto';
+  color: #18534c;
+  font-variant: small-caps;
+  font-weight: 900;
+  font-size: 4rem;
+  margin-bottom: 5px;
+  text-shadow: -2.5px 2.5px 0px #F194B4, -5px 5px 0px #c0eec0;
+}
+
+.slogan {
+  font-family: 'Roboto';
+  color: #13453f;
+  text-shadow: -1px 1px #f194b5a5;
+  margin-bottom: 40px;
+}
+
+.input-wrapper {
+  padding: 10px 10px 20px;
+  margin: 10px;
+  text-align: center;
+  align-content: center;
+  border: 1px solid var(--color-white);
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(64, 62, 72, 0.789);
 }
 
 .event-summary-title,
@@ -48,6 +70,7 @@ input[type="number"] {
   line-height: 20px;
   align-self: center;
   height: 38px;
+  margin: 10px;
 }
 
 .city {
@@ -64,6 +87,7 @@ input[type="number"] {
 }
 
 .suggestions {
+  font-family: 'Roboto';
   width: 250px;
   position: absolute;
   z-index: 2;
@@ -92,15 +116,47 @@ input[type="number"] {
   color: black;
 }
 
+.data-wrapper {
+  padding: 20px 20px 35px;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid var(--color-white);
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(64, 62, 72, 0.789);
+}
+
+.data-vis-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.recharts-pie-label-text {
+  font-family: 'Roboto';
+  font-weight: 200;
+  text-shadow: 1px 1px 1px #413c5893;
+}
+
+.EventList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  list-style: none;
+  text-align: center;
+}
+
 .event {
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
   padding: 10px 10px 35px;
-  margin-bottom: 10px;
+  margin: 10px;
+  min-height: 310px;
   text-align: left;
-  border: 1px solid #000;
-  border-radius: 4px;
+  border-radius: 5px;
   position: relative;
   background-color: #c0eec0;
   color: #000;
+  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
 
 .event-htmlLink {
@@ -114,11 +170,13 @@ input[type="number"] {
 }
 
 .details-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
   padding: 7px 30px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  margin-top: 10px;
   background-color: #f194b4;
   color: #000;
   font-family: inherit;
@@ -138,7 +196,7 @@ input[type="number"] {
   overflow-x: hidden;
   text-align: justify;
   padding-top: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 
 .numberOfEvents {
@@ -151,9 +209,9 @@ input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
-  top: 10px;
-  margin: inherit;
+  font-style: italic;
+  font-size: 0.75rem;
+  top: 20px;
 }
 
 .data-vis-wrapper {
@@ -161,6 +219,7 @@ input[type="number"] {
   align-items: center;
   flex-direction: column;
 }
+
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;
